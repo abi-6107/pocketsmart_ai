@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <path
+        d="M10 24L20 10H44L54 24L32 56L10 24Z"
+        fill="none"
+        stroke="white"
+        stroke-width="5"
+        stroke-linejoin="round"
+    />
+    <path
+        d="M10 24H54"
+        fill="none"
+        stroke="white"
+        stroke-width="5"
+    />
+    <path
+        d="M20 10L32 24L44 10"
+        fill="none"
+        stroke="white"
+        stroke-width="5"
+        stroke-linejoin="round"
+    />
+    <path
+        d="M20 24L32 56L44 24"
+        fill="none"
+        stroke="white"
+        stroke-width="5"
+    />
+</svg>

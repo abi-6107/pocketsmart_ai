@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Party Budget Planner{% endblock %}
+{% block body %}
+{% include "app_nav.html" %}
+<div class="planner-head"><h1>Party Budget Planner</h1><p>Plan your perfect event with AI-powered budget recommendations</p></div>
+<main class="form-shell">
+<form id="partyForm" class="planner-form">
+<section class="form-section"><h3>◉ Basic Information</h3><div class="grid2"><div><label>Total Budget (₹)</label><input id="partyBudget" type="number" min="1" value="50000" required></div><div><label>Number of Guests</label><input id="guests" type="number" min="1" value="30" required></div></div></section>
+<section class="form-section"><h3>◉ Event Details</h3><div class="grid2"><div><label>Event Type</label><select id="eventType"><option>Birthday</option><option>Wedding</option><option>Corporate</option><option>Anniversary</option></select></div><div><label>Venue Type</label><select id="venueType"><option>Home</option><option>Hall</option><option>Restaurant</option><option>Outdoor</option></select></div></div></section>
+<section class="form-section"><h3>◉ Party Needs</h3><div class="check-grid"><label><input type="checkbox" name="need" value="Catering" checked> Catering</label><label><input type="checkbox" name="need" value="Decoration" checked> Decoration</label><label><input type="checkbox" name="need" value="Entertainment" checked> Entertainment</label></div></section>
+<section class="form-section"><label>Additional Requirements</label><textarea id="partyNotes" placeholder="Special requests, dietary needs, theme, etc."></textarea></section>
+<button class="btn primary full" type="submit">◉ Generate Budget Plan</button>
+</form><div id="partyResult" class="result-area"></div>
+</main>
+<footer>© 2025 PocketSmart AI. All rights reserved.</footer>
+{% endblock %}

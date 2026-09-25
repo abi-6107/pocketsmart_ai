@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - PocketSmart{% endblock %}
+{% block body %}
+{% include "app_nav.html" %}
+<section class="dash-hero"><h1>Welcome, {{user.username}}!</h1><p>Choose a budget planner to get started with your personalized financial planning<br>experience</p></section>
+<section class="dashboard-cards">
+  <div class="planner-card"><img src="/static/images/home.jpg"><div><h2>⌂ Home Budget Planner</h2><p>Plan your interior design budget efficiently with AI-powered recommendations for furniture, lighting, and more.</p><a class="btn primary full" href="/home-planner">Get Started</a></div></div>
+  <div class="planner-card"><img src="/static/images/party.jpg"><div><h2>♣ Party Budget Planner</h2><p>Plan your perfect event with budget allocations for venue, catering, decorations, and entertainment.</p><a class="btn primary full" href="/party-planner">Get Started</a></div></div>
+  <div class="planner-card"><img src="/static/images/jewelry.jpg"><div><h2>◇ Jewelry Budget Planner</h2><p>Find the ideal jewelry pieces for any occasion that match your outfit and stay within your budget.</p><a class="btn primary full" href="/jewelry-planner">Get Started</a></div></div>
+</section>
+<div class="center"><a class="btn orange" href="/history">↶ View All Recommendation History</a></div>
+{% endblock %}
