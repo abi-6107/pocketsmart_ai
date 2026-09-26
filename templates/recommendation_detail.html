@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}Recommendation Details{% endblock %}
+
+{% block body %}
+
+{% include "app_nav.html" %}
+
+<main class="history-page">
+
+    <div class="history-banner">
+        <h1>Recommendation Details</h1>
+        <p>
+            View your saved budget plan and AI recommendation.
+        </p>
+    </div>
+
+    <div class="result-area">
+
+        <div class="result-card">
+
+            <h3>
+                {{ recommendation.planner }}
+            </h3>
+
+            <div class="result-row">
+                <strong>Recommendation ID:</strong>
+                {{ recommendation.id }}
+            </div>
+
+            <div class="result-row">
+                <strong>Created:</strong>
+                {{ recommendation.created_at }}
+            </div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>
+                Your Budget Request
+            </h3>
+
+            <div class="recommendation-content">
+                <pre>{{ recommendation.request_json }}</pre>
+            </div>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <h3>
+                AI Recommendation
+            </h3>
+
+            <div class="recommendation-content">
+                <pre>{{ recommendation.response_json }}</pre>
+            </div>
+
+        </div>
+
+
+        <div class="center">
+            <a href="/history" class="btn primary">
+                ← Back to History
+            </a>
+        </div>
+
+    </div>
+
+</main>
+
+<style>
+.recommendation-content {
+    background: #f7f9fc;
+    border: 1px solid #e1e7ee;
+    border-radius: 6px;
+    padding: 15px;
+    overflow-x: auto;
+}
+
+.recommendation-content pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #536d89;
+}
+</style>
+
+{% endblock %}

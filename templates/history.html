@@ -1,16 +1,57 @@
 {% extends "base.html" %}
+
 {% block title %}Recommendation History{% endblock %}
+
 {% block body %}
+
 {% include "app_nav.html" %}
+
 <main class="history-page">
-<div class="history-banner"><h1>Your Recommendation History</h1><p>View and manage all your previous budget plans and recommendations.</p></div>
-<h2>◔ Recent Recommendations</h2>
-<div class="history-grid">
-{% for row in history %}
-  <div class="history-card"><div class="history-top"><b>{{row.planner}}</b><small>{{row.created_at}}</small></div><p>Budget plan saved successfully.</p><a class="btn small" href="#" onclick="alert('Recommendation ID: {{row.id}}');return false;">View Full Details</a></div>
-{% else %}
-  <div class="empty">No recommendations yet. Create a plan from one of the planners.</div>
-{% endfor %}
-</div>
+
+    <div class="history-banner">
+        <h1>Your Recommendation History</h1>
+        <p>
+            View and manage all your previous budget plans and recommendations.
+        </p>
+    </div>
+
+    <h2>◔ Recent Recommendations</h2>
+
+    <div class="history-grid">
+
+        {% for row in history %}
+
+        <div class="history-card">
+
+            <div class="history-top">
+                <b>{{ row.planner }}</b>
+                <small>{{ row.created_at }}</small>
+            </div>
+
+            <p>
+                Budget plan saved successfully.
+            </p>
+
+            <a
+                class="btn small"
+                href="/history/{{ row.id }}"
+            >
+                View Full Details
+            </a>
+
+        </div>
+
+        {% else %}
+
+        <div class="empty">
+            No recommendations yet.
+            Create a plan from one of the planners.
+        </div>
+
+        {% endfor %}
+
+    </div>
+
 </main>
+
 {% endblock %}
