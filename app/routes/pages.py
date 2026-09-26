@@ -45,11 +45,11 @@ async def history(request: Request):
 
 @router.get("/recommendations/home")
 async def home_recommendations(request: Request):
-    return RedirectResponse("/dashboard",303)
+    return RedirectResponse("/dashboard", 303)
 
-    @router.get("/testimonials")
+@router.get("/testimonials")
 def testimonials(request: Request):
-    return templates.TemplateResponse(
+    return request.app.state.templates.TemplateResponse(
         "testimonials.html",
         {"request": request}
     )
